@@ -8,6 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="lblTitulo" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Calculo da Idade" VerticalAlignment="Top" Height="40" Width="360" FontSize="20" FontWeight="Bold" TextAlignment="Center" LineHeight="6"/>
+        <TextBlock x:Name="lblNome" HorizontalAlignment="Left" Margin="10,45,0,0" TextWrapping="Wrap" Text="Entre com o nome:" VerticalAlignment="Top" Width="340"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="10,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340"/>
+        <TextBlock x:Name="lblAnoNasc" HorizontalAlignment="Left" Margin="10,107,0,0" TextWrapping="Wrap" Text="Entre com o Ano de Nascimento:" VerticalAlignment="Top" Width="340"/>
+        <TextBox x:Name="txtAnoNasc" HorizontalAlignment="Left" Margin="10,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340"/>
+        <Button x:Name="btnCalc" Content="Calcular" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="340" Height="50" FontSize="20" FontWeight="Bold" Foreground="White" Background="#330046FF" BorderBrush="{x:Null}" Click="btnCalc_Click"/>
 
     </Grid>
 </Page>

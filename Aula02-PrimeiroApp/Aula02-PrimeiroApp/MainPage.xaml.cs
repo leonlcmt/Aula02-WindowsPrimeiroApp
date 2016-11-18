@@ -26,5 +26,38 @@ namespace Aula02_PrimeiroApp
         {
             this.InitializeComponent();
         }
+
+        private async void btnCalc_Click(object sender, RoutedEventArgs e)
+        {
+            int anoNasc;
+            int idade;
+            string nome = txtNome.Text;
+            string msg;
+
+            if(txtAnoNasc.Text != "")
+            {
+                anoNasc = Convert.ToInt32(txtAnoNasc.Text);
+                idade = DateTime.Now.Year - anoNasc;
+                msg = "Olá " + nome + ", você tem " + idade + " anos";
+            }
+            else
+            {
+                msg = "Hey! Escreve direito!";
+            }
+
+            var dialog = new Windows.UI.Popups.MessageDialog(msg);
+            await dialog.ShowAsync();
+
+            Vox(msg);
+        }
+
+        private async void Vox(String text)
+        {
+            MediaElement mediaElement = new MediaElement();
+            var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+            Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(text);
+            mediaElement.SetSource(stream, stream.ContentType);
+            mediaElement.Play();
+        }
     }
 }
